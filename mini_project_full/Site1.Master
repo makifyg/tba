@@ -18,7 +18,7 @@
             <li id="liPage3" runat="server"><a id="pgPage3" runat="server" href="page3.aspx">Page3</a></li>
             <li id="liAdmin" runat="server"><a id="pgAdmin1" runat="server" href="admin1.aspx">Admin</a></li>
             <li id="liLogout" runat="server" style="float:right"><a href="home.aspx" id="aLogout" runat="server" onserverclick="aLogout_ServerClick">Logout</a></li>
-            <li style="float: right"><a id="aUser" runat="server" href="login.aspx">Guest</a></li>
+            <li style="float: right"><a id="aUser" runat="server" href="login.aspx"><%=Session["user"]%></a></li>
         </ul>
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
@@ -26,9 +26,9 @@
             <div id="divNotAuthorized" runat="server">Not Authorized</div>
         </div>
 
-        <div id="divCountersForAdmin" runat="server" style="padding:20px">
-            Number of connected users: <div id="divConnectedUsers" runat="server"><%=Application["usersLoginCount"]%></div>
-            Number of visits in current page: <div id="divPageVisitCount" runat="server"></div>
+        <div id="divCountersForAdmin" runat="server" style="margin-top:30px;background-color:antiquewhite" >
+            <div id="divConnectedUsers" runat="server">Number of connected users: <%=Application["usersLoginCount"]%></div>
+            <div id="divPageVisitCount" runat="server">Number of visits on current page: <%=Session["currentPageCount"]%></div>
         </div>
     </form>
 </body>

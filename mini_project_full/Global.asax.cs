@@ -18,16 +18,25 @@ namespace mini_project_full
 
         protected void Session_Start(object sender, EventArgs e)
         {
+            /*איפוס המשתנים שנרצה לרשום ב
+             * Session
+             */
             Session["isAdmin"] = false;
             Session["user"] = "Guest";
             Session["isLogin"] = false;
             Session["Page3SessionClicksCount"] = 0;
+
+            /* כאשר נוצר 
+             * Session
+             * נעדכן את מספר המשתמשים הרשומים באתר ונוסיף אחד לספירה
+             */
             Application["usersLoginCount"] = (int)Application["usersLoginCount"] +1;
+
+            Session.Timeout = 1;
         }
 
         protected void Application_BeginRequest(object sender, EventArgs e)
         {
-
         }
 
         protected void Application_AuthenticateRequest(object sender, EventArgs e)
@@ -42,6 +51,10 @@ namespace mini_project_full
 
         protected void Session_End(object sender, EventArgs e)
         {
+            /*כאשר מסתיים 
+             * Session
+             * נעדכן את מספר המשתמשים הרשומים באתר ונוריד אחד מהספירה
+             */
             Application["usersLoginCount"] = (int)Application["usersLoginCount"] - 1;
         }
 

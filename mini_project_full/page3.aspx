@@ -6,7 +6,7 @@
 
     <br />
     <div>
-        <button id="btnAddClick" runat="server" onserverclick="btnAddClick_ServerClick">Add</button>
+        <button id="btnClickCount" runat="server" onserverclick="btnClickCount_ServerClick">Click Count</button>
+        <div id="divClickCount" runat="server" style="margin-block: 30px;display:inline">0</div>
     </div>
-    <div id="divClickCount" runat="server" style="margin-block:30px">0</div>
 </asp:Content>
