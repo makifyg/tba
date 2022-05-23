@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -16,27 +18,50 @@ namespace mini_project_full
                */
             Session["currentPage"] = "admin1";
 
-            //Admin הדף פתוח רק ל
-            if ((bool)Session["isAdmin"])
-                Session["isAuthorized"] = true;
+            if((bool)Session["isAdmin"])
+                Session["isAuthorizedPage"] = true;
+            else
+                Session["isAuthorizedPage"] = false;
 
+            const string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|myDb.mdf;Integrated Security=True";
+            string command = "select * from animals";
+            DataTable dt = new DataTable();
+            SqlDataAdapter adapter = new SqlDataAdapter(command, connectionString);
+            int count = adapter.Fill(dt);
 
-            //יצירת טבלה וכתיבתה על הדף
-            string table = "<table>";
-            for(int i=0; i<10; i++)
-            {
-                table += "<tr>";
-                for(int j=0;j<3;j++)
-                {
-                    table += "<td>";
-                    table += $"[{i},{j}]";
-                    table += "</td>";
-                }
-                table += "</tr>";
-            }
-            table += "</table>";
-
-            div1.InnerHtml = table;
+            string htmlTable = getHtmlTableFromDataTable(dt);
+            div1.InnerHtml = htmlTable;
         }
+
+        string getHtmlTableFromDataTable(DataTable dt)
+        {
+            string htmlTable = "<table border=1>";
+
+            //הוספת שורה עליונה עם שמות השדות
+            htmlTable += "<tr>";
+            for (int colIndex = 0; colIndex < dt.Columns.Count; colIndex++)
+            {
+                htmlTable += "<th>";
+                htmlTable += dt.Columns[colIndex].ColumnName;
+                htmlTable += "</th>";
+            }
+            htmlTable += "</tr>";
+
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                htmlTable += "<tr>";
+                for (int j = 0; j < dt.Columns.Count; j++)
+                {
+                    htmlTable += "<td>";
+                    htmlTable += dt.Rows[i][j];
+                    htmlTable += "</td>";
+                }
+                htmlTable += "</tr>";
+            }
+            htmlTable += "</table>";
+
+            return htmlTable;
+        }
+
     }
 }

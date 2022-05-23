@@ -56,5 +56,5 @@
         <div><button id="btnDelete" runat="server" onserverclick="btnDelete_ServerClick">Run</button></div>
         <div id="idDeleteResult" runat="server"></div>
     </div>
-
+    <button id="idIsEnd" runat="server" onserverclick="idIsEnd_ServerClick">isEndanger</button>
 </asp:Content>

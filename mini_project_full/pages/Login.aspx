@@ -11,5 +11,7 @@
         password: <input id="inPassword" type="password" runat="server">
     </div>
     <button id="btnLogin" runat="server" onserverclick="btnLogin_ServerClick">Login</button>
-    <div style="visibility:hidden; color:red" id="divError" runat="server">Wrong user name or password</div>
+    <div id="divError" runat="server" style="display: none; color: red">Wrong user name or password</div>
+
+    <div style="margin:20px;">To register click <a href="Registration.aspx">here</a></div>
 </asp:Content>

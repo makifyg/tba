@@ -18,9 +18,10 @@ namespace mini_project_full
 
 
             //user2 הגבלת צפיה רק עבור 
-            string currentUser = (string)Session["user"];
-            if (currentUser == "user2")
-                Session["isAuthorized"] = true;
+            if ((bool)Session["isLogin"])
+                Session["isAuthorizedPage"] = true;
+            else
+                Session["isAuthorizedPage"] = false;
         }
     }
 }

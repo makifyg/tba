@@ -17,8 +17,11 @@ namespace mini_project_full
         {
             Session["currentPage"] = "dbNotConnected";
 
-            //הדף פתוח לכולם
-            Session["isAuthorized"] = true;
+            //הדף פתוח רק למשתמשים רשומים
+            if ((bool)Session["isLogin"])
+                Session["isAuthorizedPage"] = true;
+            else
+                Session["isAuthorizedPage"] = false;
 
             ShowAnimalTabel();
         }
@@ -126,6 +129,17 @@ namespace mini_project_full
             htmlTable += "</table>";
 
             return htmlTable;
+        }
+
+        protected void idIsEnd_ServerClick(object sender, EventArgs e)
+        {
+            string commandSql = "select isEndangered from Animals where name = 'eagle'";
+
+            DataTable dt = new DataTable();
+            SqlDataAdapter adapter = new SqlDataAdapter(commandSql, connectionString);
+            adapter.Fill(dt);
+            var gender = dt.Rows[0][0];
+            bool b = (bool)gender;
         }
     }
 }

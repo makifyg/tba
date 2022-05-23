@@ -17,8 +17,10 @@ namespace mini_project_full
             Session["currentPage"] = "page3";
 
             //רק משתמשים רשומים יכולים לצפות בדף
-            if((bool)Session["isLogin"])
-                Session["isAuthorized"] = true;
+            if ((bool)Session["isLogin"])
+                Session["isAuthorizedPage"] = true;
+            else
+                Session["isAuthorizedPage"] = false;
 
             /*כשנכנסים לעמוד נרצה להציג את מספר הקליקים עד כה
              */

@@ -19,8 +19,11 @@ namespace mini_project_full
         {
             Session["currentPage"] = "dbAdvance";
 
-            //הדף פתוח לכולם
-            Session["isAuthorized"] = true;
+            //הדף פתוח רק למשתמשים רשומים
+            if ((bool)Session["isLogin"])
+                Session["isAuthorizedPage"] = true;
+            else
+                Session["isAuthorizedPage"] = false;
 
             if (!IsPostBack)
                 ShowEnireTable();

@@ -19,7 +19,7 @@ namespace mini_project_full
             bool isAdmin = (bool)Session["isAdmin"];
 
             //בדיקת הרשאות
-            bool authorizedPage = (bool)Session["isAuthorized"];
+            bool authorizedPage = (bool)Session["isAuthorizedPage"];
 
             /*אם למשתמש אין הרשאות לדף הנוכחי, יש להעלים את תוכן הדף ולהשאיר הודעת שגיאה 
              *אחרת יש להשאיר את תוכן הדף ולהעלים את הודעת השגיאה 
@@ -38,23 +38,16 @@ namespace mini_project_full
             //הסתרת חלקים בתפריט, בהתאם להרשאות של המשתמש
             if (isAdmin == false)
                 liAdmin.Visible = false;
-            if (isLogin)
-            {
-                if (currentUser != "user1")
-                    liPage1.Visible = false;
-
-                if (currentUser != "user2")
-                    liPage2.Visible = false;
-
-                aUser.HRef = "";
-            }
-            else
+            if (isLogin==false)
             {
                 liPage1.Visible = false;
                 liPage2.Visible = false;
                 liPage3.Visible = false;
                 liLogout.Visible = false;
             }
+            else
+                aUser.HRef = "";
+
 
             //הדגשת הדף הנוכחי בתפריט
             if (currentPage == "home")
@@ -68,20 +61,11 @@ namespace mini_project_full
             else if (currentPage == "admin1")
                 pgAdmin1.Attributes["class"] = "active";
             else if (currentPage == "dbNotConnected")
-            {
                 pgDatabase.Attributes["class"] = "active";
-                pgDatabase.InnerHtml = pgDbNotConnected.InnerHtml;
-            }
             else if (currentPage == "dbConnected")
-            {
                 pgDatabase.Attributes["class"] = "active";
-                pgDatabase.InnerHtml = pgDbConnected.InnerHtml;
-            }
             else if (currentPage == "dbAdvance")
-            {
                 pgDatabase.Attributes["class"] = "active";
-                pgDatabase.InnerHtml = pgDbAdvance.InnerHtml;
-            }
         }
 
         protected void aLogout_ServerClick(object sender, EventArgs e)

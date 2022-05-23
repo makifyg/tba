@@ -1,24 +1,28 @@
 ﻿function validateAllFields() {
-    var isValid = validateField1();
+    var isValid = validateUserName();
     if (isValid == true)
-        isValid = validateField2();
+        isValid = validatePassword();
     if (!isValid)
         idIsValid.innerHTML = "Not valid";
     return isValid;
 }
 
-function validateField1() {
-    var length = idField1.value.length;
+function validateUserName() {
+    var length = idUserName.value.length;
     if (length >= 2)
         return true;
-    else
+    else {
+        idUserNameErr.innerHTML = "Username should be more than 2";
         return false;
+    }
 }
 
-function validateField2() {
-    var length = idField2.value.length;
+function validatePassword() {
+    var length = idPassword.value.length;
     if (length >= 5)
         return true;
-    else
+    else {
+        idPasswordErr.innerHTML = "Password should be more than 5";
         return false;
+    }
 }

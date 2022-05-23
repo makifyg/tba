@@ -51,51 +51,6 @@ namespace mini_project_full
         protected global::System.Web.UI.HtmlControls.HtmlAnchor pgDatabase;
 
         /// <summary>
-        /// pgDbNotConnected control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor pgDbNotConnected;
-
-        /// <summary>
-        /// pgDbConnected control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor pgDbConnected;
-
-        /// <summary>
-        /// pgDbAdvance control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor pgDbAdvance;
-
-        /// <summary>
-        /// liFormValidation control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liFormValidation;
-
-        /// <summary>
-        /// pgFormValidation control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor pgFormValidation;
-
-        /// <summary>
         /// liPage1 control.
         /// </summary>
         /// <remarks>

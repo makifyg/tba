@@ -18,7 +18,7 @@ namespace mini_project_full
 
 
             //הדף פתוח לכולם
-            Session["isAuthorized"] = true;
+            Session["isAuthorizedPage"] = true;
         }
     }
 }

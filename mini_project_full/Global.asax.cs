@@ -26,6 +26,7 @@ namespace mini_project_full
             Session["Page3SessionClicksCount"] = 0;
             Session["isFreePage"] = false;
             Session["currentPage"] = "";
+            Session["isAuthorizedPage"] = false; 
 
             /* כאשר נוצר 
              * Session
@@ -36,6 +37,7 @@ namespace mini_project_full
 
         protected void Application_BeginRequest(object sender, EventArgs e)
         {
+
         }
 
         protected void Application_AuthenticateRequest(object sender, EventArgs e)
