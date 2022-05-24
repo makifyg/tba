@@ -12,7 +12,7 @@ namespace mini_project_full.pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session["currentPage"] = "FormValidation";
+            Session["currentPage"] = "regstaton";
 
             //הדף פתוח לכולם
             Session["isAuthorizedPage"] = true;

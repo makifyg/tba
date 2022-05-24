@@ -5,4 +5,10 @@
     <div style="font-size: 300%">Admin</div>
 
     <div id="div1" runat="server"></div>
+    <div id="deleteUserId">
+
+    </div>
+    <div id="updateUserId">
+
+    </div>
 </asp:Content>
