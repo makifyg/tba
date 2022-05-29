@@ -2,8 +2,6 @@
     var isValid = validateUserName();
     if (isValid == true)
         isValid = validatePassword();
-    if (!isValid)
-        idIsValid.innerHTML = "Not valid";
     return isValid;
 }
 

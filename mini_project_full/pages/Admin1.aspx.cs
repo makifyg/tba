@@ -53,7 +53,16 @@ namespace mini_project_full
                 for (int j = 0; j < dt.Columns.Count; j++)
                 {
                     htmlTable += "<td>";
-                    htmlTable += dt.Rows[i][j];
+                    if (dt.Columns[j].ColumnName == "isEndangered")
+                    {
+                        if (dt.Rows[i][j] == DBNull.Value)
+                            htmlTable += "False";
+                        else
+                            htmlTable += dt.Rows[i][j];
+                    }
+                    else
+                        htmlTable += dt.Rows[i][j];
+                    
                     htmlTable += "</td>";
                 }
                 htmlTable += "</tr>";

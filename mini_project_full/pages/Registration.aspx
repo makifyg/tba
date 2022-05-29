@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Registration.aspx.cs" Inherits="mini_project_full.pages.WebForm1" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Registration.aspx.cs" Inherits="mini_project_full.pages.WebForm1" ClientIDMode="Static" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script src="../js/myProjectCode.js" type="text/javascript"></script>
     <style type="text/css">
@@ -14,6 +14,7 @@
     <div style="font-size:150%; margin-top:20px;">Registration</div>
     <div>user name:<input id="idUserName" runat="server" /><div id=idUserNameErr class="error"></div></div>
     <div>password: <input id="idPassword" runat="server" type="password"/><div id="idPasswordErr" class="error"></div>
+    <div>birth date:<input id="idBirthDate" runat="server" type="date" /></div>
 </div>
     <div id="idAddResult" runat="server"></div>
     <div id="idAddError" runat="server" class="error"></div>
